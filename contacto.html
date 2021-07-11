@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/contacto.css">
+    <link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+      <div class="container">
+        <header>
+        </header>
+        <!-- colocar un nav o navegador-->
+        <nav class="navbar navbar-expand-lg navbar-light border" style="background-color: rgb(219, 219, 163);">
+  <div class="container-fluid">
+    <a class="nav-link active" aria-current="page" href="nosotros.html" style="color:white;" >Quienes somos</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- colapsa y lo expande cuando no se encuentra en large -->
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="registrodenota.html">Registro de notas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="muroescolar.html">Muro escolar</a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" href="calculadora.html">Calculadora escolar</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
+ <div class="social-bar">
+    <a href="https://www.facebook.com/" class="icon icon-facebook" target="_blank"></a>
+    <a href="https://www.youtube.com/" class="icon icon-youtube" target="_blank"></a>
+    <a href="https://www.instagram.com/" class="icon icon-instagram" target="_blank"></a>
+    
+    </div>
+    <div class="container" style="background-color:rgb(216, 237, 252);">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form class="form-horizontal" method="post">
+                        <fieldset>
+                            <legend class="text-center header">Contacto</legend>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="fname" name="name" type="text" placeholder="Primer Nombre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="lname" name="name" type="text" placeholder="Apellido" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="email" name="email" type="text" placeholder="Email" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="phone" name="phone" type="text" placeholder="Telefono" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <textarea class="form-control" id="message" name="Escribe aquí tu comentario" rows="7" placeholder="Escribe aquí tu mensaje"></textarea>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg "onclick="enviar();">Enviar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer  class="container-fluid bg-dark text-white py-1 text-center">
+        <p>Desarrollado por : Arce Perez, Gian & Fernandez Tarrillo, Mia</p>
+      </footer>
+    <script>
+        function enviar(){
+	        var fname=document.getElementById('fname').value;
+	        var lname=document.getElementById('lname').value;
+            var email=document.getElementById('email').value;
+            var phone=document.getElementById('phone').value;
+            var message=document.getElementById('message').value;
+	        if(fname =="" || lname =="" || email =="" || phone =="" || message ==""){
+		        alert("Porfavor rellenar todos los campos");
+	        }else{
+                alert('Agradecemos por enviar este mensaje' );
+                alert('Su nombre es  '+fname+' , su apellido es '+lname+' , su email es '+email+' , su número es '+phone)
+
+            }
+        }
+    </script>
+</body>
+</html>

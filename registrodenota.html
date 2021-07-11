@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/jpg" href="img/cole.gif"> 
+    <title>Resgistro de notas </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/font.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+        </header>
+        <!-- colocar un nav o navegador-->
+        <nav class="navbar navbar-expand-lg navbar-light border" style="background-color: rgb(219, 219, 163)">
+<div class="container-fluid">
+<a class="nav-link active" aria-current="page" href="nosotros.html" style="color:white;" >Quienes somos</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- colapsa y lo expande cuando no se encuentra en large -->
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="registrodenota.html">Registro de notas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="muroescolar.html">Muro escolar</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="calculadora.html">Calculadora escolar</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="contacto.html">Contacto</a>
+    </li>
+    <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+  </ul>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Buscar</button>
+  </form>
+  <div class="social-bar">
+    <a href="https://www.facebook.com/" class="icon icon-facebook" target="_blank"></a>
+    <a href="https://www.youtube.com/" class="icon icon-youtube" target="_blank"></a>
+    <a href="https://www.instagram.com/" class="icon icon-instagram" target="_blank"></a>
+  </div>
+</div>
+</div>
+</nav>
+<main  class="container">
+    <div class="p-4 p-md-5 mb-4 text-black rounded"style="background-color: white;">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 fst-italic">Resgistro escolar</h1>
+        <p class="lead my-3">Aquí podrás sacar el promedio de tus notas </p>
+      </div>
+    </div>
+<div class="cont" align ="center">
+        <h1>Promedios</h1>
+        <input type="text" id="1nota" class="subcont" placeholder="Primera nota">
+        <input type="text" id="2nota" class="subcont" placeholder="Segunda nota"><br><br>
+        <input type="text" id="3nota" class="subcont" placeholder="Tercera nota">
+        <input type="text" id="4nota" class="subcont" placeholder="Cuarta nota">
+</div>
+<div class="cont" align="center">
+        <h3>Resultados</h3>
+        <input type="text" id="prom" class="subcont" placeholder="Promedio">
+        <input type="text" id="EQ" class="subcont" placeholder="Estado"><br><br>
+        <button id="boton" onclick="calcularpromedio()"> Calcular </button>
+</div>
+<footer  class="container-fluid bg-dark text-white py-2 text-center">
+    <p>Desarrollado por : Arce Perez, Gian & Fernandez Tarrillo, Mia</p>
+</footer>
+</main>
+<script>
+    function contenido(id){
+    return document.getElementById(id);
+    }
+        function calcularpromedio(){
+            var pn = parseInt(contenido('1nota').value);
+            var sn = parseInt(contenido('2nota').value);
+            var tn = parseInt(contenido('3nota').value);
+            var cn = parseInt(contenido('4nota').value);
+            var total = (pn + sn +tn + cn)/4;
+            contenido('prom').value = total;
+
+            if (total >=13 && total <=20){
+                contenido('EQ').value = 'Aprobado';
+            }
+            else if (total >=0 && total < 13){
+                contenido('EQ').value = "Desaprobado"
+            }
+        }
+</script>
+</body>
+</html>
